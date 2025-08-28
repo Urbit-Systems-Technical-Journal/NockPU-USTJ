@@ -107,9 +107,9 @@ The design process involves:
 
 Several significant projects have attempted to implement functional programming languages directly in hardware:
 
-\textbf{\textsc{skim} (\textsc{s}, \textsc{k}, \textsc{i} reduction machine)}: Developed by Clarke et al. at Cambridge in the 1970s and 1980s \citep{Clarke1980, Norman1984}, \textsc{skim} implemented combinatory logic directly in hardware. It pioneered many of the techniques for graph reduction that influenced later work.
+\textbf{\textsc{skim} (\textsc{s}, \textsc{k}, \textsc{i} reduction machine)}: Developed by Clarke et al.\ at Cambridge in the 1970s and 1980s (\citet{Clarke1980}; \citet{Norman1984}), \textsc{skim} implemented combinatory logic directly in hardware. It pioneered many of the techniques for graph reduction that influenced later work.
 
-\textbf{The Reduceron}: More recently, work at the University of York by Naylor and Runciman has produced The Reduceron \citep{Naylor2008, Naylor2009}, an \textsc{fpga}-based graph reduction machine initially designed for executing Haskell programs using basic combinators (\textsc{s}, \textsc{k}, \textsc{i}, \textsc{b}, \textsc{c}). Later versions moved to more complex supercombinator implementations.
+\textbf{The Reduceron}: More recently, work at the University of York by Naylor and Runciman has produced The Reduceron (\citet{Naylor2008}; \citet{Naylor2009}), an \textsc{fpga}-based graph reduction machine initially designed for executing Haskell programs using basic combinators (\textsc{s}, \textsc{k}, \textsc{i}, \textsc{b}, \textsc{c}). Later versions moved to more complex supercombinator implementations.
 
 While these implementations provide valuable precedent, they differ from the NockPU in several important ways:
 \begin{enumerate}
@@ -415,7 +415,7 @@ This approach allows for dynamic allocation without requiring complex memory man
 The memory architecture is designed to optimize the prevalent access patterns in Nock execution:
 
 \begin{enumerate}
-  \item \textbf{Cell-Based Memory Model}: Each memory word represents a complete cell containing both head and tail components within the 64-bit word structure. Single atoms are represented as cells \texttt{[a NIL]}, where \textsc{nil} is the maximum direct atom value (28-bits).
+  \item \textbf{Cell-Based Memory Model}: Each memory word represents a complete cell containing both head and tail components within the 64-bit word structure. Single atoms are represented as cells \texttt{[a NIL]}, where \texttt{NIL} is the maximum direct atom value (28-bits).
   \item \textbf{Parallel Memory Operations}: The design allows up to three memory operations per processor cycle: two reads and one write, enabling efficient traversal and manipulation of tree structures.
   \item \textbf{Memory Management Unit (\textsc{mmu})}: The NockPU is shielded from off-chip memory complexity through an \textsc{mmu} that handles the translation between the processor's cell-based addressing and the underlying memory hierarchy.
 \end{enumerate}
