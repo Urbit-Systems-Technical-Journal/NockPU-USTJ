@@ -118,10 +118,6 @@
 \node[draw=black, thick, fill=white, circle, inner sep=0.05, minimum size=0.1cm] at (0.675, -5.35) {P};
 
 \end{tikzpicture}
-\caption{Stackless Tree Traversal Sequence demonstrating breadcrumb-based navigation without a traditional call stack.  The NockPU implements tree traversal without a stack by modifying pointers to create breadcrumb trails.  Sequence:\\
-\textcolor{white}{.}\, A. \,Initial tree state with root and subtrees. \\
-\textcolor{white}{.}\, B. \,Descend into the left subtree leaving breadcrumb. \\
-\textcolor{white}{.}\, C. \,Follow breadcrumb back to root to continue with right.
-}
+\caption{Stackless Tree Traversal Sequence demonstrating breadcrumb-based navigation without a traditional call stack. The NockPU implements tree traversal without a stack by modifying pointers to create breadcrumb trails. Sequence: (A) Initial tree state with root and subtrees. (B) Descend into the left subtree leaving breadcrumb. (C) Follow breadcrumb back to root to continue with right.}
 \label{fig:tree-traversal}
 \end{figure}

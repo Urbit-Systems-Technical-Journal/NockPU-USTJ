@@ -30,9 +30,9 @@
 }
 %  Arrange subsequent pages:
 \fancyhf{}
-% \fancyhead[LE]{{\urbitfont Urbit Systems Technical Journal}}
-% \fancyhead[RO]{NockPU:  Nock in Hardware}
-% \fancyfoot[LE,RO]{}
+\fancyhead[LE]{{\urbitfont Urbit Systems Technical Journal}}
+\fancyhead[RO]{NockPU:  Nock in Hardware}
+\fancyfoot[LE,RO]{}
 
 %%MANUSCRIPT
 \title{An Implementation of Nock Combinator Logic in Hardware: The NockPU Project}
@@ -201,11 +201,11 @@ Table~\ref{tab:tag-bits} provides a complete specification of the 8-bit tag fiel
 \begin{tabular}{ll}
 Tag bits (63--56): & \texttt{00000011}$_2$ \\
  & \quad \text{(both head and tail are atoms)} \\
-Head (55--28): & \texttt{0x000002A}$_2$ \\
+Head (55--28): & \texttt{0x000002A}$_{16}$ \\
  & \quad \text{(28-bit representation of 42)} \\
-Tail (27--0): & \texttt{0x000002B}$_2$ \\
+Tail (27--0): & \texttt{0x000002B}$_{16}$ \\
  & \quad \text{(28-bit representation of 43)} \\
-Complete word: & \texttt{0x03000002A000002B}$_2$
+Complete word: & \texttt{0x03000002A000002B}$_{16}$
 \end{tabular}
 
 \subsubsection{Atom and Cell Representation}
